@@ -1,5 +1,6 @@
 # Backend
 backend/bin/
+backend/logs/
 backend/target/
 backend/compile_error.txt
 
