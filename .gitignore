@@ -1,0 +1,12 @@
+# Backend
+backend/bin/
+backend/target/
+backend/compile_error.txt
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.development
+frontend/.env.production
+backend/src/main/resources/application.properties

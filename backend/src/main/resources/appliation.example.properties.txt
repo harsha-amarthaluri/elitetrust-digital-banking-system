@@ -1,0 +1,65 @@
+spring.application.name=backend
+server.port=9090
+
+# ==========================
+# MySQL Configuration
+# ==========================
+spring.datasource.url=jdbc:mysql://localhost:3306/bank_database?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=YOUR_DATABASE_USERNAME
+spring.datasource.password=YOUR_DATABASE_PASSWORD
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl-auto=update
+
+# ==========================
+# Redis Configuration
+# ==========================
+spring.data.redis.host=localhost
+spring.data.redis.port=6379
+
+# ==========================
+# JWT Configuration
+# ==========================
+app.jwt.secret=YOUR_256_BIT_JWT_SECRET
+app.jwt.expiration-ms=900000
+app.jwt.refresh-expiration-ms=604800000
+
+# ==========================
+# File Upload Configuration
+# ==========================
+app.upload.dir=uploads/kyc
+
+# ==========================
+# CORS Configuration
+# ==========================
+app.cors.allowed-origins=http://localhost:5173
+
+# ==========================
+# Actuator & Prometheus
+# ==========================
+management.endpoints.web.exposure.include=health,info,prometheus
+management.endpoint.health.show-details=always
+
+# ==========================
+# Twilio SMS Configuration
+# ==========================
+app.twilio.account-sid=YOUR_TWILIO_ACCOUNT_SID
+app.twilio.auth-token=YOUR_TWILIO_AUTH_TOKEN
+app.twilio.from-number=YOUR_TWILIO_PHONE_NUMBER
+
+# ==========================
+# Spring Mail Configuration
+# ==========================
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=YOUR_EMAIL_ADDRESS
+spring.mail.password=YOUR_EMAIL_APP_PASSWORD
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.smtp.ssl.trust=smtp.gmail.com
+
+# ==========================
+# Google OAuth Configuration
+# ==========================
+app.google.client-id=YOUR_GOOGLE_CLIENT_ID

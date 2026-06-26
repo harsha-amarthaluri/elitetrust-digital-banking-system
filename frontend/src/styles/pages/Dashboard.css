@@ -1,0 +1,496 @@
+/* ===================================================================
+   EliteTrust Bank — Dashboard
+   Premium Corporate Style | White · Gray · Indigo #4338CA
+   =================================================================== */
+
+/* ── Page Container ── */
+.dashboard-container {
+    min-height: 100vh;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: var(--font-family, 'Inter', sans-serif);
+}
+
+/* ── Header ── */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-card, 12px);
+    background: var(--color-bg, #ffffff);
+    border: 1px solid var(--color-border, #E5E7EB);
+    box-shadow: var(--shadow-card);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-section h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary, #111827);
+    letter-spacing: 0.08em;
+}
+
+.notification-bell-container {
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+
+.notification-bell-container:hover {
+    background: var(--color-bg-subtle, #F3F4F6);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+
+.user-profile:hover {
+    background: var(--color-bg-subtle, #F3F4F6);
+}
+
+.user-profile span {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary, #6B7280);
+}
+
+.user-profile strong {
+    color: var(--color-text-primary, #111827);
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-accent, #4338CA);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+/* ── Dashboard Grid ── */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Main Content Left ── */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Balance Card ── */
+.balance-card {
+    padding: 2rem 2rem 1.75rem;
+    border-radius: var(--radius-card, 12px);
+    background: var(--color-accent, #4338CA);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(67, 56, 202, 0.25);
+}
+
+.balance-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+}
+
+.balance-card::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 40px;
+    width: 240px;
+    height: 240px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+}
+
+.balance-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-btn {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-family: var(--font-family, 'Inter', sans-serif);
+}
+
+.card-btn:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* ── Quick Actions ── */
+.quick-actions {
+    padding: 1.5rem;
+    border-radius: var(--radius-card, 12px);
+    background: var(--color-bg, #ffffff);
+    border: 1px solid var(--color-border, #E5E7EB);
+    box-shadow: var(--shadow-card);
+}
+
+.section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-secondary, #6B7280);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+    gap: 0.75rem;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.75rem 0.5rem;
+    border-radius: 10px;
+    transition: background 0.15s, transform 0.15s;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.action-item:hover {
+    background: var(--color-accent-light, #EEF2FF);
+    border-color: rgba(67,56,202,0.1);
+    transform: translateY(-1px);
+}
+
+.action-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--color-bg-subtle, #F3F4F6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    transition: background 0.15s;
+}
+
+.action-item:hover .action-icon {
+    background: rgba(67,56,202,0.1);
+}
+
+.action-label {
+    font-size: 0.7rem;
+    color: var(--color-text-secondary, #6B7280);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* ── Charts Section ── */
+.dashboard-charts-section {
+    border-radius: var(--radius-card, 12px);
+    overflow: hidden;
+}
+
+.charts-loading-state {
+    background: var(--color-bg, #ffffff);
+    border: 1px solid var(--color-border, #E5E7EB);
+    box-shadow: var(--shadow-card);
+}
+
+/* ── Linked Accounts ── */
+.linked-accounts {
+    padding: 1.5rem;
+    border-radius: var(--radius-card, 12px);
+    background: var(--color-bg, #ffffff);
+    border: 1px solid var(--color-border, #E5E7EB);
+    box-shadow: var(--shadow-card);
+}
+
+.accounts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-subtle, #F3F4F6);
+    border-radius: 10px;
+    border: 1px solid var(--color-border, #E5E7EB);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.account-item:hover {
+    border-color: var(--color-accent, #4338CA);
+    box-shadow: 0 0 0 3px rgba(67,56,202,0.06);
+}
+
+.acc-info {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+.acc-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-accent-light, #EEF2FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.acc-details h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-primary, #111827);
+    margin: 0 0 2px 0;
+}
+
+.acc-details span {
+    font-size: 0.78rem;
+    color: var(--color-text-muted, #9CA3AF);
+}
+
+.acc-balance {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.acc-balance h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-accent, #4338CA);
+    margin: 0;
+}
+
+.no-accounts {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--color-bg-subtle, #F3F4F6);
+    border-radius: 10px;
+    border: 1px dashed var(--color-border, #E5E7EB);
+}
+
+/* ── Right Sidebar ── */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Transaction Section ── */
+.transactions-section {
+    padding: 1.5rem;
+    border-radius: var(--radius-card, 12px);
+    background: var(--color-bg, #ffffff);
+    border: 1px solid var(--color-border, #E5E7EB);
+    box-shadow: var(--shadow-card);
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-border, #E5E7EB);
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.t-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.t-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-bg-subtle, #F3F4F6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+.t-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.t-details h4 {
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: var(--color-text-primary, #111827);
+    margin: 0 0 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.t-date {
+    font-size: 0.72rem;
+    color: var(--color-text-muted, #9CA3AF);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.t-amount {
+    font-size: 0.875rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+
+.t-amount.positive {
+    color: var(--color-success, #059669);
+}
+
+.t-amount.negative {
+    color: var(--color-text-primary, #111827);
+}
+
+/* ── Badge ── */
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--color-danger, #DC2626);
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* ── Skeleton ── */
+.loading-spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--color-border, #E5E7EB);
+    border-top-color: var(--color-accent, #4338CA);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .balance-amount {
+        font-size: 1.875rem;
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

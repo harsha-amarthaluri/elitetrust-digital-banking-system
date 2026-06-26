@@ -1,0 +1,415 @@
+/* ═══════════════════════════════════════════════════════════ */
+/* SpendingCharts.css – Premium AI Spending Analysis Charts  */
+/* ═══════════════════════════════════════════════════════════ */
+
+.spending-charts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: chartsFadeIn 0.6s ease forwards;
+}
+
+@keyframes chartsFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Charts Header ─── */
+.charts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+}
+
+.charts-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.charts-title-row h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.charts-ai-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #4f46e5, #ec4899);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 14px;
+    animation: pulseBadge 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseBadge {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.06); }
+}
+
+/* ─── Toggle Buttons ─── */
+.charts-toggle-group {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-input);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.toggle-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.toggle-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.toggle-btn.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15);
+}
+
+/* ─── Chart Content Area ─── */
+.charts-content {
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+.chart-info-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.chart-subtitle h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: var(--text-primary);
+}
+
+.chart-subtitle p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ─── Time Filter ─── */
+.time-filter-group {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-input);
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.filter-btn {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ─── Chart Area ─── */
+.chart-area {
+    min-height: 320px;
+    position: relative;
+}
+
+.chart-wrapper {
+    animation: chartSlideIn 0.5s ease forwards;
+}
+
+@keyframes chartSlideIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ─── Custom Tooltip ─── */
+.chart-custom-tooltip {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 12px 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    min-width: 160px;
+}
+
+.tooltip-label {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+}
+
+.tooltip-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0;
+}
+
+.tooltip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.tooltip-name {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    flex: 1;
+}
+
+.tooltip-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ─── Chart Legend ─── */
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+}
+
+.legend-dot.high {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.legend-dot.moderate {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.legend-dot.low {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* ─── Insight Text Below Chart ─── */
+.chart-insight-text {
+    margin-top: 1rem;
+}
+
+.insight-chip {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    animation: chipSlideIn 0.4s ease forwards;
+    border-left: 3px solid transparent;
+}
+
+@keyframes chipSlideIn {
+    from { opacity: 0; transform: translateX(-8px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.insight-chip.danger {
+    background: rgba(239, 68, 68, 0.06);
+    border-left-color: #ef4444;
+    color: #b91c1c;
+}
+
+.insight-chip.success {
+    background: rgba(16, 185, 129, 0.06);
+    border-left-color: #10b981;
+    color: #047857;
+}
+
+.insight-chip.info {
+    background: rgba(59, 130, 246, 0.06);
+    border-left-color: #3b82f6;
+    color: #1d4ed8;
+}
+
+.insight-chip.warning {
+    background: rgba(245, 158, 11, 0.06);
+    border-left-color: #f59e0b;
+    color: #b45309;
+}
+
+.insight-chip strong {
+    font-weight: 700;
+}
+
+/* ─── Empty State ─── */
+.chart-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 240px;
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+.chart-empty-icon {
+    font-size: 3rem;
+    animation: floatEmptyIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatEmptyIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.chart-empty-state p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 300px;
+}
+
+/* ─── Compact Mode (for Dashboard) ─── */
+.spending-charts-container.compact .charts-header {
+    padding: 1rem 1.25rem;
+}
+
+.spending-charts-container.compact .charts-content {
+    padding: 1.25rem;
+}
+
+.spending-charts-container.compact .charts-title-row h3 {
+    font-size: 1.05rem;
+}
+
+/* ─── Recharts Overrides ─── */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+    stroke: rgba(0, 0, 0, 0.04);
+}
+
+.recharts-bar-rectangle {
+    transition: filter 0.2s ease;
+}
+
+.recharts-bar-rectangle:hover {
+    filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.recharts-legend-item-text {
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+}
+
+.recharts-default-tooltip {
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.recharts-reference-line-label {
+    font-weight: 600;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    .charts-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .charts-toggle-group {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .chart-info-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .chart-legend {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .spending-charts-container {
+        gap: 0.75rem;
+    }
+
+    .charts-content {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .toggle-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .charts-title-row h3 {
+        font-size: 1rem;
+    }
+}
